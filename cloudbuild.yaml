@@ -8,20 +8,19 @@ steps:
   - 'us-central1-c'
   - '--command'
   - |
-	if [ -d "/home/santhosh/workspace/todoappbysql"]; then
-		cd /home/santhosh/workspace/todoappbysql
-		go mod tidy
-		go build -o main.go
-		./main
-	else
-		mkdir workspace
-		cd /home/santhosh/workspace
-		git clone https://github.com/santhoshsapare/todoappbysql.git
-		cd /home/santhosh/workspace/todoappbysql
-		go mod init github.com/santhoshsapare/todoappbysql
-		go mod tidy
-		go build main.go
-		./main
-
+     if [ -d "/home/santhosh/workspace/todoappbysql"]; then
+      cd /home/santhosh/workspace/todoappbysql
+      go mod tidy
+      go build -o main.go
+      ./main
+     else
+      mkdir workspace
+      cd /home/santhosh/workspace
+      git clone https://github.com/santhoshsapare/todoappbysql.git
+      cd /home/santhosh/workspace/todoappbysql
+      go mod init github.com/santhoshsapare/todoappbysql
+      go mod tidy
+      go build main.go
+      ./main
 options:
   logging: 'CLOUD_LOGGING_ONLY'
